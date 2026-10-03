@@ -1,0 +1,61 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f4f6fb;
+  color: #1d2433;
+}
+
+header {
+  background: #2f4fd8;
+  color: #fff;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 { margin: 0; font-size: 1.3rem; }
+
+nav { background: #fff; border-bottom: 1px solid #e0e4ee; padding: 0 16px; display: flex; overflow-x: auto; }
+nav button {
+  border: 0; background: none; padding: 14px 16px; cursor: pointer;
+  font: inherit; color: #667085; border-bottom: 3px solid transparent;
+}
+nav button.active { color: #2f4fd8; border-bottom-color: #2f4fd8; font-weight: 600; }
+
+main { max-width: 1000px; margin: 20px auto; padding: 0 16px; }
+footer { text-align: center; color: #667085; font-size: .85rem; padding: 20px; }
+
+form { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+input, select {
+  font: inherit; padding: 8px 10px; border: 1px solid #c9cfdd; border-radius: 6px;
+  flex: 1; min-width: 150px;
+}
+button { font: inherit; padding: 8px 14px; border-radius: 6px; border: 1px solid #c9cfdd; background: #fff; cursor: pointer; }
+button.primary { background: #2f4fd8; border-color: #2f4fd8; color: #fff; }
+button.danger { color: #b42318; border-color: #f0b7b1; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e8ebf3; font-size: .92rem; }
+th { background: #f8f9fc; color: #667085; font-size: .78rem; text-transform: uppercase; }
+td.empty { text-align: center; color: #667085; padding: 20px; }
+td button { padding: 4px 10px; font-size: .82rem; margin-right: 4px; }
+
+.tag { padding: 2px 8px; border-radius: 99px; font-size: .78rem; font-weight: 600; }
+.tag.green { background: #e3f6ec; color: #157f4b; }
+.tag.red { background: #fde8e6; color: #b42318; }
+.tag.blue { background: #e8edff; color: #243cae; }
+.tag.orange { background: #fff2d9; color: #a15c00; }
+
+#message { max-width: 1000px; margin: 12px auto 0; padding: 0 16px; }
+#message div { padding: 10px 14px; border-radius: 6px; background: #e3f6ec; color: #157f4b; }
+#message div.bad { background: #fde8e6; color: #b42318; }
+
+h2 { font-size: 1.05rem; margin: 20px 0 10px; }
+
+#test-results { list-style: none; padding: 0; }
+#test-results li { padding: 6px 0; }
+#test-results .pass { color: #157f4b; }
+#test-results .fail { color: #b42318; }

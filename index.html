@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>College Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1> College Library</h1>
+    <span id="today"></span>
+  </header>
+
+  <nav>
+    <button data-tab="books" class="active">Books</button>
+    <button data-tab="students">Students</button>
+    <button data-tab="issue">Issue / Return</button>
+    <button data-tab="records">Records</button>
+    <button data-tab="tests">Tests</button>
+  </nav>
+
+  <div id="message"></div>
+
+  <main>
+    <!-- BOOKS -->
+    <section id="books">
+      <form id="book-form">
+        <input type="hidden" name="id">
+        <input name="title" placeholder="Title">
+        <input name="author" placeholder="Author">
+        <input name="isbn" placeholder="ISBN (10 or 13 digits)">
+        <input name="copies" type="number" min="1" value="1" placeholder="Copies">
+        <button class="primary" id="book-submit">Add book</button>
+        <button type="button" id="book-cancel" hidden>Cancel</button>
+      </form>
+      <table id="book-table"></table>
+    </section>
+
+    <!-- STUDENTS -->
+    <section id="students" hidden>
+      <form id="student-form">
+        <input type="hidden" name="id">
+        <input name="roll" placeholder="Roll number">
+        <input name="name" placeholder="Name">
+        <input name="department" placeholder="Department">
+        <button class="primary" id="student-submit">Add student</button>
+        <button type="button" id="student-cancel" hidden>Cancel</button>
+      </form>
+      <table id="student-table"></table>
+    </section>
+
+    <!-- ISSUE / RETURN -->
+    <section id="issue" hidden>
+      <form id="issue-form">
+        <select id="issue-student"></select>
+        <select id="issue-book"></select>
+        <button class="primary">Issue book</button>
+      </form>
+      <h2>Books currently borrowed</h2>
+      <table id="open-table"></table>
+    </section>
+
+    <!-- RECORDS -->
+    <section id="records" hidden>
+      <select id="record-student"></select>
+      <table id="record-table"></table>
+    </section>
+
+    <!-- TESTS -->
+    <section id="tests" hidden>
+      <button class="primary" id="run-tests">Run tests</button>
+      <ul id="test-results"></ul>
+    </section>
+  </main>
+
+  <footer>14-day loan · max 3 books per student · ₹2 fine per late day</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
